@@ -1,0 +1,149 @@
+mld
+heritage
+- singletable:
+Toutes les clases qui participent dans l'heritage seront dans une seule table
+Personne (id ,nom_complet,role,login,mdp,grade,matricule,adresse,sexe)
+- Joined:
+Creer autant de tables que de classe mais la cle de la classe mere migre comme classe etrangere au niveau des classes filles
+Personne (id ,nom_complet,role,login,mdp,grade,matricule,adresse,sexe)
+User(#Personne_id,login,mdp)
+Professeur(#Personne_id,grade)
+RP(#Personne_id)
+AC(#Personne_id)
+Etudiant(#Personne_id,adresse,matricule,sexe)
+
+-type de requete
+ -requet de mis a jour => change l'etat de la table
+ -retourne un entier => nombre de ligne modifier
+ insert
+ delete
+ update
+ -retourne des donne => objet, tableau
+ select
+   -selectall():select * From table
+   -selectById():select * From table wher id = ?
+
+si un ensemble de classe se partage des meme attributs et les memes methode
+ on leur creer une classe qui va les heriter
+ mais s'il ont les memes methodes et sont de types different on leur creer un interface
+
+//Des explication dans index
+//2-Creer Objet ou instanciation 
+// $pers1=new Personne();
+//appel une methode de la classe nommee constructeur
+//3-Donner un etat à un Objet
+//-> Operateur de porte d'instance
+//:: Operateur de porte de class
+//$pers1->interface de la classe(tous les attributs et methodes public de la classe)
+// $pers1->setId(1);
+// $pers1->setNomComplet('Baila Wane');
+
+// $pers2=new Personne();
+// $pers2->setId(2);
+// $pers2->setNomComplet('Aly Tall Niang');
+
+// echo $pers1->getId();
+// echo $pers2->getNomComplet();
+$AC=new AC();
+echo $AC->getRole();
+$Etudiant=new Etudiant();
+echo $Etudiant->getRole();
+
+// $ins=new Inscription();
+// $ins->ac();
+// $ins->anneeScolaire();
+// $ins->classe();
+
+$prof=new Professeur();
+echo $prof->getRole();
+$rp=new RP();
+echo $rp->getRole();
+
+
+
+MODEL
+// use App\model\Professeur;
+// use App\model\Personne;
+// use App\model\AC;
+// use App\model\Etudiant;
+// use App\model\Rp;
+// use App\model\User;
+// use App\model\Classe;
+// use App\Model\Module;
+// use App\Model\Classe;
+
+// $Etudiant=new Etudiant();
+// $Etudiant->setNomComplet('El Hadji Sy');
+// $Etudiant->setLogin('logineladji');
+// $Etudiant->setPassword('passworSy');
+// $Etudiant->setMatricule('sy001');
+// $Etudiant->setSexe('GOOR');
+// $Etudiant->setAdresse('DAKAR');
+// $Etudiant->insert();
+// $Etudiant=Etudiant::findAll();
+
+
+// $Etudiant=user::findAll();//select * from personne where role not like ROLE_RROFESSEUR
+// $userConnect=User::findUserByLoginAndPassword("logineladji2","passworSy");
+// dd($userConnect);
+$class=new Classe();
+$class->setLibelle('Clsse1');
+$class->setFiliere('Clsse1');
+$class->setNiveau('CM2');
+$class->insert();
+$class->professeurs();
+dd($class);
+
+// $personne=AC::findAll();
+
+
+// echo '<pre>';
+// var_dump($personne);
+//select * from personne
+// AC::findAll();//select * from personne where role like ROLE_AC
+// $personne= Rp::findAll();//select * from personne where role like ROLE_RP
+// echo '<pre>';
+// var_dump($personne);
+// $prof=Professeur::findAll();//select * from personne where role like ROLE_RROFESSEUR
+// dd($prof);
+// echo '</pre>';
+// Classe::delete(1);
+// Module::findAll(1);
+// AC::delete(2);
+// Professeur::delete(2);
+
+
+
+
+$attributes="*",$column="",$cherche=""
+
+
+
+formulaire de connection
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin w-50 m-auto">
+    
+  <form method="POST" action="login">
+    <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+    <h1 class="h3 mb-3 fw-normal">Veuiller connecter</h1>
+
+    
+    
+
+    <div class="checkbox mb-3">
+      <label>
+        <!-- <input type="checkbox" value="remember-me"> Remember me -->
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Connexion</button> -->
+    <!-- <p class="mt-5 mb-3 text-muted">&copy;ODC 2021–2022</p>
+  </form>
+</main> -->
+
+
+ 

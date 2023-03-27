@@ -1,0 +1,23 @@
+{
+    "name": "mor/poo",
+    "autoload": {
+        "psr-4": {
+            "App\\Core\\": "core/",
+            "App\\model\\": "models/",
+            "App\\Controller\\": "controllers/",
+            "App\\Exception\\": "exeptions/",
+            "App\\Route\\": "routes/",
+            "App\\Template\\": "templates/"
+
+        }
+    },
+    "authors": [
+        {
+            "name": "DIOUF-MOR",
+            "email": "daaroukhoudos04@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/validator": "^6.0"
+    }
+}
